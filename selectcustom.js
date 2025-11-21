@@ -485,12 +485,13 @@
   };
   var Qt = (t) => {
       let {
-          dropdownToggle: e,
-          dropdownList: o,
-          optionsStore: r,
-          hideInitial: n,
-        } = t,
-        s = (0, St.default)(() => {
+        dropdownToggle: e,
+        dropdownList: o,
+        optionsStore: r,
+        hideInitial: n,
+      } = t;
+      if (!o) return () => {};
+      let s = (0, St.default)(() => {
           let c = r.find(({ selected: l }) => l),
             p = r.find(({ hidden: l }) => !l);
           if (!c || !p) return;
@@ -510,12 +511,12 @@
       );
     },
     Zt = (t) => {
-      let { selectElement: e } = t,
-        o = new MutationObserver((r) => {
-          r.some(({ addedNodes: s, removedNodes: i }) =>
-            [...s, ...i].some(Q)
-          ) && N(t);
-        });
+      let { selectElement: e } = t;
+      if (!e) return () => {};
+      let o = new MutationObserver((r) => {
+        r.some(({ addedNodes: s, removedNodes: i }) => [...s, ...i].some(Q)) &&
+          N(t);
+      });
       return (
         o.observe(e, {
           childList: !0,
