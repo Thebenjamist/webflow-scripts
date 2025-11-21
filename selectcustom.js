@@ -1,4 +1,5 @@
 "use strict";
+console.log("Loaded select custom");
 (() => {
   var wt = Object.create;
   var F = Object.defineProperty;
