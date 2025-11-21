@@ -587,6 +587,7 @@
           });
         });
       }
+      console.log("✓ Custom select content loaded");
       let t = O("dropdown", {
           all: !0,
           operator: "prefixed",
