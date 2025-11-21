@@ -1,5 +1,4 @@
 "use strict";
-console.log("Loaded select custom");
 (() => {
   var wt = Object.create;
   var F = Object.defineProperty;
@@ -589,7 +588,6 @@ console.log("Loaded select custom");
           });
         });
       }
-      console.log("✓ Custom select content loaded");
       let t = O("dropdown", {
           all: !0,
           operator: "prefixed",
